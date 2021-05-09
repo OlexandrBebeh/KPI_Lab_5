@@ -1,10 +1,14 @@
-package API_tests;
+package test;
 
+import endpoints.ImgurBaseEndpoints;
+import endpoints.ImgurEndpoints;
+import net.serenitybdd.junit.runners.SerenityRunner;
 import org.hamcrest.Matchers;
 import org.junit.Test;
+import org.junit.runner.RunWith;
 
 import static io.restassured.RestAssured.given;
-
+@RunWith(SerenityRunner.class)
 public class SimpleTestImgur {
     @Test
     public void verifyStatusCode() {
@@ -51,14 +55,7 @@ public class SimpleTestImgur {
                 .and().statusCode(200);
     }
 
-    @Test
-    public void verifyHeaderHaveParams() {
-        given()
-                .log().uri()
-                .baseUri("https://imgur.com/user/testzero")
-                .then()
-                .statusCode(200).and().header("Connection","keep-alive");
-    }
+
 
     @Test
     public void verifyStatus404() {

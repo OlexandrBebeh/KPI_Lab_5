@@ -1,5 +1,6 @@
-package API_tests;
+package endpoints;
 
+import config.Config;
 import io.restassured.RestAssured;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
@@ -8,7 +9,7 @@ public class ImgurEndpoints {
 
     public Response getImageByID(String id) {
         return given()
-                .header("Authorization",Config.USER_ID)
+                .header("Authorization", Config.USER_ID)
                 .pathParam("id", id)
                 .when()
                 .get(Config.IMAGE_BY_ID)
