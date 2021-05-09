@@ -1,13 +1,16 @@
-package test;
+package java.test;
 
-import endpoints.ImgurBaseEndpoints;
-import endpoints.ImgurEndpoints;
+
 import net.serenitybdd.junit.runners.SerenityRunner;
 import org.hamcrest.Matchers;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
+import java.endpoints.ImgurBaseEndpoints;
+import java.endpoints.ImgurEndpoints;
+
 import static io.restassured.RestAssured.given;
+
 @RunWith(SerenityRunner.class)
 public class SimpleTestImgur {
     @Test

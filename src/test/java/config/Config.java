@@ -1,4 +1,4 @@
-package config;
+package java.config;
 
 public class Config {
         public static final String IMGUR_BASE_URL = "https://imgur.com/";
