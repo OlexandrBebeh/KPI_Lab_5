@@ -1,6 +1,6 @@
-package java.endpoints;
+package endpoints;
 
-import java.config.Config;
+import config.Config;
 import io.restassured.RestAssured;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;

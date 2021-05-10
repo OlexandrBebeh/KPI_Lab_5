@@ -1,18 +1,19 @@
-package java.test;
-
-
+import endpoints.ImgurBaseEndpoints;
+import endpoints.ImgurEndpoints;
 import net.serenitybdd.junit.runners.SerenityRunner;
 import org.hamcrest.Matchers;
+import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
-import java.endpoints.ImgurBaseEndpoints;
-import java.endpoints.ImgurEndpoints;
-
 import static io.restassured.RestAssured.given;
-
 @RunWith(SerenityRunner.class)
-public class SimpleTestImgur {
+public class Tests {
+
+    @Before
+    public void SetUp() {
+        System.out.println("Test start");
+    }
     @Test
     public void verifyStatusCode() {
         given()
@@ -33,7 +34,6 @@ public class SimpleTestImgur {
                 .then()
                 .assertThat()
                 .body(Matchers.notNullValue()).statusCode(200);
-        ;
     }
 
     @Test
@@ -50,12 +50,12 @@ public class SimpleTestImgur {
                 .body(Matchers.notNullValue()).statusCode(200);
     }
     @Test
-    public void verifyGetUserByID() {
-        new ImgurBaseEndpoints().getUserByName("testzero")
+    public void verifyGetUserByID_fail() {
+        new ImgurBaseEndpoints().getUserByName("test023151641345tgasdv0000zero")
                 .then()
                 .assertThat()
                 .body(Matchers.notNullValue())
-                .and().statusCode(200);
+                .and().statusCode(404);
     }
 
 
