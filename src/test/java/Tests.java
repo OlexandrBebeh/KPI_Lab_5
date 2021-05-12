@@ -64,7 +64,7 @@ public class Tests {
     public void verifyStatus404() {
         given()
                 .log().uri()
-                .baseUri("https://imgur.com/user/tetsrt3q4c4yqxexhx3c6")
+                .baseUri("https://imgur.com/user/tetsrt3q4c4yqxexhx36")
                 .then()
                 .statusCode(404);
     }
