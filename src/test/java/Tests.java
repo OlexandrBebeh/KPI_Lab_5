@@ -12,7 +12,7 @@ public class Tests {
 
     @Before
     public void SetUp() {
-        System.out.println("Test start!!!");
+        System.out.println("Test start!");
     }
     @Test
     public void verifyStatusCode() {
